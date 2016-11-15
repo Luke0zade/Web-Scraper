@@ -1,0 +1,2 @@
+language: nodeJS
+website = prompt("Please enter a website to 'Scrape'.")
