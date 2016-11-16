@@ -1,2 +1,10 @@
-language: nodeJS
-website = prompt("Please enter a website to 'Scrape'.")
+var request = require('request');
+var cheerio = require('cheerio');
+var fs = require('fs');
+var prompt = require('prompt');
+console.log('Please type in the web address you wish to search.')
+prompt.get([{
+  Website: 'URL',
+  required: true
+}
+]);
