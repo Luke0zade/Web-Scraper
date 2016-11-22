@@ -3,8 +3,15 @@ var cheerio = require('cheerio');
 var fs = require('fs');
 var prompt = require('prompt');
 console.log('Please type in the web address you wish to search.')
-prompt.get([{
-  Website: 'URL',
-  required: true
-}
-]);
+prompt.start();
+prompt.get(['Address'], function (err, result){
+  var Address = result.Address;
+  console.log('Website received was:');
+  console.log(Address);
+});
+
+request('Address', function(error, response, body) {
+  if(error) {
+    console.log("Error: " + error);
+  }
+  console.log("Status code: " + response.statusCode);
